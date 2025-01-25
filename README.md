@@ -1,2 +1,1 @@
-# not-a-captcha-solver
-yes
+# nothing unethical is happening here go away
