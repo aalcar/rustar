@@ -23,7 +23,7 @@ for i in range(num_chars):
 # Create captcha text.
 captcha_text = ''.join(text_chars)
 
-# Create captcha!
+# Create captcha! assuming you have a captchas folder in the current directory.
 captcha = ImageCaptcha(width = 500, height = 280)
 
 captcha.write(captcha_text, f'captchas/{captcha_text}.png')
