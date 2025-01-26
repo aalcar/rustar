@@ -1,3 +1,6 @@
+# ****************************************************************************
+# * Make sure you have captcha installed and Pillow updated to atleast 8.0.0 *
+# ****************************************************************************
 from captcha.image import ImageCaptcha
 from random import choice
 
