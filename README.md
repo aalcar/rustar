@@ -1,1 +1,1 @@
-## hmu if you want the model it's way too big to fit here lol
+## Model is way too big to fit here (over 20MB). Contact me to get it!
