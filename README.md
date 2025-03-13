@@ -1,1 +1,1 @@
-## hmu if you want the model it's way to big too fit here lol
+## hmu if you want the model it's way too big to fit here lol
