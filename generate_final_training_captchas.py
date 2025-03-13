@@ -12,19 +12,17 @@ possible_chars = ['a', 'A', 'b', 'B', 'c', 'C', 'd', 'D', 'e', 'E', 'f', 'F', 'g
                   '8', '9']
 
 # Number of characters in the string between 4 and 10.
-lower_bound = 4
-upper_bound = 10
-num_chars = choice(range(lower_bound, upper_bound + 1))
+num_chars = 6
+NUM_IMAGES = 25000
 
 # Create list of text characters.
-text_chars = []
-for i in range(num_chars):
-    text_chars.append(choice(possible_chars))
+for _ in range(NUM_IMAGES):
+    text_chars = [choice(possible_chars) for _ in range(num_chars)]
 
-# Create captcha text.
-captcha_text = ''.join(text_chars)
+    # Create captcha text.
+    captcha_text = ''.join(text_chars)
 
-# Create captcha!
-captcha = ImageCaptcha(width = 64, height = 64)
+    # Create captcha!
+    captcha = ImageCaptcha(width = 128, height = 128)
 
-captcha.write(captcha_text, f'captchas/{captcha_text}111.png')
+    captcha.write(captcha_text, f'final_training/{captcha_text}.png')

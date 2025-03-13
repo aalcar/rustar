@@ -1,22 +1,18 @@
-from solver_header import CaptchaCNN, possible_chars, predict_captcha
+from solver_header import predict_captcha
+import random
+import os
 
-import torch
+# Set path to your validation images
+validation_dir = "final_training"
+all_images = [f for f in os.listdir(validation_dir) if f.endswith('.png')]
 
-# Load the model
-model = CaptchaCNN(num_classes=62)  # Ensure this matches the training setup
-model.load_state_dict(torch.load('captcha_solver.pth'))
-model.eval()  # Set the model to evaluation mode
+# Pick a random image to test
+image_name = random.choice(all_images)
+image_path = os.path.join(validation_dir, image_name)
+actual_text = os.path.splitext(image_name)[0]  # Extract text from filename
 
-total = 62
-correct = 0
-for char in possible_chars:
-    image_path = f"training/{char}/image2.png"
-    predicted_character = predict_captcha(image_path)
+predicted_text = predict_captcha(image_path)
 
-    print(f"Predicted character: {predicted_character}")
-    print(f"Actual Character: {char} \n")
-
-    if predicted_character == char:
-        correct += 1
-
-print(f"[{correct}/{total}]")
+print(f"Predicted CAPTCHA: {predicted_text}")
+print(f"Actual CAPTCHA: {actual_text}")
+print(f"Correct: {predicted_text == actual_text}")
